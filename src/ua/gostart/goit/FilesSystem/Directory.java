@@ -9,7 +9,7 @@ public class Directory {
     Files files;
 
     Directory(){
-        Files files = new Files();
+     //   Files files = new Files();
         System.out.println("Создан экземпляр класса Directory");
         System.out.println("Создан экземпляр класса Files");
         System.out.println("Создано отношение композиция классов Directory(контейнер) и Files(содержимое)");
