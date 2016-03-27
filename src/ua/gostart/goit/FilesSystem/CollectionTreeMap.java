@@ -1,7 +1,7 @@
 package ua.gostart.goit.FilesSystem;
 import java.util.*;
 
-public class CollectionTreeMap implements Comparable {
+public class CollectionTreeMap{
     
     public TreeMap<Integer,Files> collectionTreeMap = new TreeMap<Integer,Files>();
 
@@ -11,12 +11,12 @@ public class CollectionTreeMap implements Comparable {
         return collectionTreeMap;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        return
-               this.collectionTreeMap.getClass().getName().compareTo(o.getClass().getName())
-        ;
-    }
+//    @Override
+//    public int compareTo(Object o) {
+//        return
+//               this.collectionTreeMap.getClass().getName().compareTo(o.getClass().getName())
+//        ;
+//    }
 
     public void makecollectionTreeMap(){
         
@@ -36,7 +36,7 @@ public class CollectionTreeMap implements Comparable {
 
 
         collectionTreeMap.put(1,audioFile );
-        collectionTreeMap.put(2,audioFile1);
+        collectionTreeMap.put(10,audioFile1);
         collectionTreeMap.put(3,audioFile2);
         collectionTreeMap.put(4,textFile);
         collectionTreeMap.put(5,textFile1);
