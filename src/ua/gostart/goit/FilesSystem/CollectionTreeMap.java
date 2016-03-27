@@ -1,7 +1,4 @@
 package ua.gostart.goit.FilesSystem;
-
-
-import java.io.File;
 import java.util.*;
 
 public class CollectionTreeMap implements Comparable {
@@ -25,8 +22,8 @@ public class CollectionTreeMap implements Comparable {
         
         
         AudioFile audioFile = new AudioFile("audio1", "mp3", 55);
-        AudioFile audioFile1 = new AudioFile("audio2", "mp3", 55);
-        AudioFile audioFile2 = new AudioFile("audio3", "mp3", 55);
+        AudioFile audioFile1 = new AudioFile("audio2", "mp3", 56);
+        AudioFile audioFile2 = new AudioFile("audio3", "mp3", 57);
         //System.out.println(audioFile.toString());
         TextFile textFile = new TextFile("text1", "txt", 7);
         TextFile textFile1 = new TextFile("text2", "txt", 8);
@@ -63,7 +60,7 @@ public class CollectionTreeMap implements Comparable {
 
 
         collectionTreeMap.clear();
-        collectionTreeMap.put(1,audioFile );
+        collectionTreeMap.put(audioFile.compareTo(imageFile),audioFile );
         collectionTreeMap.put(audioFile.compareTo(imageFile1),audioFile1);
         collectionTreeMap.put(audioFile.compareTo(imageFile2),audioFile2);
         collectionTreeMap.put(audioFile.compareTo(audioFile),textFile);

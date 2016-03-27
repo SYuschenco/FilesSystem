@@ -41,6 +41,6 @@ public class Files implements Comparable<Files> {
     public int compareTo(Files other) {
         return
                 //(this.filesName.compareTo(other.filesName));
-                this.filesSize-other.filesSize;
+               this.filesSize-other.filesSize;
     }
 }

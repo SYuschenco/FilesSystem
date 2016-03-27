@@ -1,12 +1,20 @@
 package ua.gostart.goit.FilesSystem;
-
 import java.util.*;
 
 public class Runner {
 
     public static void main(String[] args) {
 
+// Выбрать иерархию классов из ДЗ по теме OOP in Java и создать несколько коллекций объектов из данной иерархии.
+// Хотя бы одна коллекция должна содержать в себе объекты разных классов.
+// 1 Создать класс, который печатает созданные коллекции на экран в виде таблицы.
+// Колонки таблицы соответствуют полям объектов.
+// Каждая строка в таблице соответствует объекту из коллекции.
+// 2 Создать упорядоченный список объектов из ДЗ по теме OOP in Java не прибегая к  использованию Collections.sort().
 
+
+        // 1 Создать класс, который печатает созданные коллекции на экран в виде таблицы.
+        // для практики использовал разные методы сортировки
         PrintCollection printCollection = new PrintCollection();
         CollectionList collectionList = new CollectionList();
         collectionList.makeCollectionList();
@@ -22,7 +30,7 @@ public class Runner {
         Comparator<Files> comparator = (o1,o2) -> o1.filesName.compareTo(o2.filesName);
         Collections.sort(collectionList.collectionList, comparator);
 
-        System.out.println("Sorted by lyambda filesName field ArrayList:");
+        System.out.println("Sorted by lyambda ObjectName field ArrayList:");
         printCollection.print(collectionList.collectionList);
         Collections.sort(collectionList.collectionList, (o1,o2) -> o1.getFilesName().compareTo(o2.getFilesName()));
 
@@ -41,9 +49,8 @@ public class Runner {
         // not genericType collection
         CollectionListAntipattern collectionListAntipattern = new CollectionListAntipattern();
         collectionListAntipattern.makeCollectionListAntipattern();
-        collectionListAntipattern.getCollectionListAntipattern().get(0);
         // field acces
-        System.out.println("collectionListAntipattern.filesSize()=" + collectionListAntipattern.getCollectionListAntipattern().size());
+        //System.out.println("collectionListAntipattern.filesSize()=" + collectionListAntipattern.getCollectionListAntipattern().size());
         String filesName = ((Files) collectionListAntipattern.getCollectionListAntipattern().get(0)).filesName;
         System.out.println(filesName);
         System.out.println();
@@ -52,6 +59,7 @@ public class Runner {
         System.out.println("Unsorted ObjectList:");
         printCollection.print(collectionListAntipattern.collectionListAntipattern);
 
+        //2 Создать упорядоченный список объектов из ДЗ по теме OOP in Java не прибегая к  использованию Collections.sort().
         CollectionTreeSet collectionTreeSet = new CollectionTreeSet();
         collectionTreeSet.makecollectionTreeSet();
 

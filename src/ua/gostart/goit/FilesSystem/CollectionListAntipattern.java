@@ -1,6 +1,4 @@
 package ua.gostart.goit.FilesSystem;
-
-
 import java.util.ArrayList;
 
 public class CollectionListAntipattern {

@@ -1,9 +1,5 @@
 package ua.gostart.goit.FilesSystem;
-
-
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class CollectionList {
     
