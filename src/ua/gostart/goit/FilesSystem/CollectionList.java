@@ -2,6 +2,7 @@ package ua.gostart.goit.FilesSystem;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CollectionList {
@@ -38,6 +39,8 @@ public class CollectionList {
         collectionList.add(imageFile);
         collectionList.add(imageFile1);
         collectionList.add(imageFile2);
+
+
     }
 
     
@@ -46,7 +49,7 @@ public class CollectionList {
     @Override
     public String toString() {
         return "CollectionList{" +
-                "size=" + collectionList.size() +
+                "filesSize=" + collectionList.size() +
                 '}';
     }
 }

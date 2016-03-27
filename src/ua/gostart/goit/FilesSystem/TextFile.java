@@ -6,9 +6,12 @@ public class TextFile extends Files {
         super(filesName, fileType, size);
     }
 
+
+
     @Override
     public String getFileType() {
         return "txt";
     }
+
 
 }

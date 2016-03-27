@@ -1,15 +1,15 @@
 package ua.gostart.goit.FilesSystem;
 
-public class Files {
+public class Files implements Comparable<Files> {
     public String filesName;
     public String fileType;
-    public int size;
+    public int filesSize;
 
 
-    public Files(String filesName, String fileType, int size) {
+    public Files(String filesName, String fileType, int filesSize) {
         this.filesName = filesName;
         this.fileType = fileType;
-        this.size = size;
+        this.filesSize = filesSize;
     }
 
     public String getFilesName() {
@@ -26,13 +26,21 @@ public class Files {
 
     @Override
     public String toString() {
+        //new GFrame();
         return  "|"      +getClass().getSuperclass().getSimpleName() +
                 " \t |  " + getClass().getSimpleName()+
                 "\t|   "  + filesName+
                 "\t|"    + fileType +
                 "\t|"    +
-                size     +  "   \t|";
+                filesSize +  "   \t|";
+
     }
 
 
+    @Override
+    public int compareTo(Files other) {
+        return
+                //(this.filesName.compareTo(other.filesName));
+                this.filesSize-other.filesSize;
+    }
 }

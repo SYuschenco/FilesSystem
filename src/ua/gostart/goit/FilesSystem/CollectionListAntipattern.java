@@ -12,7 +12,11 @@ public class CollectionListAntipattern {
     {
         return collectionListAntipattern;
     }
-    
+
+    public void setCollectionListAntipattern(ArrayList collectionListAntipattern) {
+        this.collectionListAntipattern = collectionListAntipattern;
+    }
+
     public void makeCollectionListAntipattern(){
         
         
@@ -39,6 +43,8 @@ public class CollectionListAntipattern {
         collectionListAntipattern.add(imageFile);
         collectionListAntipattern.add(imageFile1);
         collectionListAntipattern.add(imageFile2);
+
+
     }
 
     
@@ -47,7 +53,7 @@ public class CollectionListAntipattern {
     @Override
     public String toString() {
         return "CollectionList{" +
-                "size=" + collectionListAntipattern.size() +
+                "filesSize=" + collectionListAntipattern.size() +
                 '}';
     }
 }

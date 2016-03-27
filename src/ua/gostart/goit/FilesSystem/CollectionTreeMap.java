@@ -1,19 +1,26 @@
 package ua.gostart.goit.FilesSystem;
 
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Set;
-import java.util.TreeMap;
+import java.io.File;
+import java.util.*;
 
-public class CollectionTreeMap {
+public class CollectionTreeMap implements Comparable {
     
-    public TreeMap collectionTreeMap = new TreeMap();
+    public TreeMap<Integer,Files> collectionTreeMap = new TreeMap<Integer,Files>();
+
+
 
     public TreeMap getCollection() {
         return collectionTreeMap;
     }
-    
+
+    @Override
+    public int compareTo(Object o) {
+        return
+               this.collectionTreeMap.getClass().getName().compareTo(o.getClass().getName())
+        ;
+    }
+
     public void makecollectionTreeMap(){
         
         
@@ -31,16 +38,59 @@ public class CollectionTreeMap {
         //System.out.println(imageFile.toString());
 
 
-        collectionTreeMap.put(audioFile,1);
-        collectionTreeMap.put(audioFile1,1);
-        collectionTreeMap.put(audioFile2,1);
-        collectionTreeMap.put(textFile,1);
-        collectionTreeMap.put(textFile1,1);
-        collectionTreeMap.put(textFile2,1);
-        collectionTreeMap.put(imageFile,1);
-        collectionTreeMap.put(imageFile1,1);
-        collectionTreeMap.put(imageFile2,1);
+        collectionTreeMap.put(1,audioFile );
+        collectionTreeMap.put(2,audioFile1);
+        collectionTreeMap.put(3,audioFile2);
+        collectionTreeMap.put(4,textFile);
+        collectionTreeMap.put(5,textFile1);
+        collectionTreeMap.put(6,textFile2);
+        collectionTreeMap.put(7,imageFile);
+        collectionTreeMap.put(8,imageFile1);
+        collectionTreeMap.put(9,imageFile2);
+
+        System.out.println("Unsorted(default sorted by keyValue) TreeMap:");
+        System.out.println("------------------------------------------------------");
+        System.out.println("|Super   |  Object      | Object    |Object | Object |");
+        System.out.println("|Name    |  Name        | Field1    |Field2 | Field3 |");
+        System.out.println("------------------------------------------------------");
+
+        for (Map.Entry<Integer,Files> entry : collectionTreeMap.entrySet()) {
+            //String g = entry.getKey()+"  "+entry.getValue();
+            String g = String.valueOf(entry.getValue());
+            System.out.println(g + " " + entry.getKey());
+        }
+        System.out.println("------------------------------------------------------");
+
+
+        collectionTreeMap.clear();
+        collectionTreeMap.put(1,audioFile );
+        collectionTreeMap.put(audioFile.compareTo(imageFile1),audioFile1);
+        collectionTreeMap.put(audioFile.compareTo(imageFile2),audioFile2);
+        collectionTreeMap.put(audioFile.compareTo(audioFile),textFile);
+        collectionTreeMap.put(audioFile.compareTo(audioFile1),textFile1);
+        collectionTreeMap.put(audioFile.compareTo(audioFile2),textFile2);
+        collectionTreeMap.put(audioFile.compareTo(imageFile),imageFile);
+        collectionTreeMap.put(audioFile.compareTo(imageFile1),imageFile1);
+        collectionTreeMap.put(audioFile.compareTo(imageFile2),imageFile2);
+
+        System.out.println("Unsorted sorted by hz TreeMap:");
+        System.out.println("------------------------------------------------------");
+        System.out.println("|Super   |  Object      | Object    |Object | Object |");
+        System.out.println("|Name    |  Name        | Field1    |Field2 | Field3 |");
+        System.out.println("------------------------------------------------------");
+
+        for (Map.Entry<Integer,Files> entry : collectionTreeMap.entrySet()) {
+            //String g = entry.getKey()+"  "+entry.getValue();
+            String g = String.valueOf(entry.getValue());
+            System.out.println(g + " " + entry.getKey());
+        }
+        System.out.println("------------------------------------------------------");
+
+
+
+
     }
+
 
     
 
@@ -48,7 +98,7 @@ public class CollectionTreeMap {
     @Override
     public String toString() {
         return "CollectionList{" +
-                "size=" + CollectionTreeMap.this +
+                "filesSize=" + CollectionTreeMap.this +
                 '}';
     }
 }

@@ -1,17 +1,60 @@
 package ua.gostart.goit.FilesSystem;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Runner {
+
     public static void main(String[] args) {
 
 
         PrintCollection printCollection = new PrintCollection();
-        printCollection.print();
-        printCollection.printTreeMap();
+        CollectionList collectionList = new CollectionList();
+        collectionList.makeCollectionList();
+        printCollection.setCollectionToPrint(collectionList.collectionList);
+
+        System.out.println("Unsorted ArrayList:");
+        printCollection.print(collectionList.collectionList);
+        // sorted by fields
+        Collections.sort(collectionList.collectionList);
+        System.out.println("Sorted by Comparable<Files> filesSize field ArrayList:");
+
+        printCollection.print(collectionList.collectionList);
+        Comparator<Files> comparator = (o1,o2) -> o1.filesName.compareTo(o2.filesName);
+        Collections.sort(collectionList.collectionList, comparator);
+
+        System.out.println("Sorted by lyambda filesName field ArrayList:");
+        printCollection.print(collectionList.collectionList);
+        Collections.sort(collectionList.collectionList, (o1,o2) -> o1.getFilesName().compareTo(o2.getFilesName()));
+
+        System.out.println("Sorted by lyambdaMethod filesName field ArrayList:");
+        printCollection.print(collectionList.collectionList);
+        Collections.sort(collectionList.collectionList,(o1,o2) ->{
+            int result = o1.filesSize -o2.filesSize;
+            //System.out.println(result);
+            return result;
+        });
+
+        CollectionTreeMap collectionTreeMap = new CollectionTreeMap();
+        collectionTreeMap.makecollectionTreeMap();
+
+
+        // not genericType collection
+        CollectionListAntipattern collectionListAntipattern = new CollectionListAntipattern();
+        collectionListAntipattern.makeCollectionListAntipattern();
+        collectionListAntipattern.getCollectionListAntipattern().get(0);
+        // field acces
+        System.out.println("collectionListAntipattern.filesSize()=" + collectionListAntipattern.getCollectionListAntipattern().size());
+        String filesName = ((Files) collectionListAntipattern.getCollectionListAntipattern().get(0)).filesName;
+        System.out.println(filesName);
+        System.out.println();
+
+        printCollection.setCollectionToPrint(collectionListAntipattern.collectionListAntipattern);
+        System.out.println("Unsorted ObjectList:");
+        printCollection.print(collectionListAntipattern.collectionListAntipattern);
+
+        CollectionTreeSet collectionTreeSet = new CollectionTreeSet();
+        collectionTreeSet.makecollectionTreeSet();
+
 
 
     }
