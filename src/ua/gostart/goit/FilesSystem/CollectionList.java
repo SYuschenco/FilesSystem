@@ -45,7 +45,8 @@ public class CollectionList {
     @Override
     public String toString() {
         return "CollectionList{" +
-                "filesSize=" + collectionList.size() +
+                "filesSize=" + collectionList.getClass().getSimpleName() +
+                +
                 '}';
     }
 }

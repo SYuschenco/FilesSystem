@@ -13,6 +13,10 @@ public class Runner {
 // 2 Создать упорядоченный список объектов из ДЗ по теме OOP in Java не прибегая к  использованию Collections.sort().
 
 
+//Реализовать шифрование текста с помощью алгоритма Цезаря.
+//Зашифровать и расшифровать текстовое представление коллекци обьектов из ДЗ из Модуля 3: ООП в Java
+
+
         // 1 Создать класс, который печатает созданные коллекции на экран в виде таблицы.
         // для практики использовал разные методы сортировки
         PrintCollection printCollection = new PrintCollection();
@@ -63,6 +67,28 @@ public class Runner {
         CollectionTreeSet collectionTreeSet = new CollectionTreeSet();
         collectionTreeSet.makecollectionTreeSet();
 
+
+//Реализовать шифрование текста с помощью алгоритма Цезаря.
+//Зашифровать и расшифровать текстовое представление коллекци обьектов из ДЗ из Модуля 3: ООП в Java
+
+        //в метод (де)кодирования я передаю начальный и конечный символы желаемой таблицы кодировки,
+        //сдвиг(ключ) и строку для обработки
+        System.out.println("Encode/Decode------------------------------------------------------------------------------------------");
+
+        StringBuilder collectionString = new StringBuilder();
+        collectionList.makeCollectionList();
+        collectionString.append(collectionList.collectionList.toString());
+        String collectionStringOriginal = ""+collectionString;
+        System.out.println(collectionStringOriginal.trim());
+
+        System.out.println("Origin line");
+        String line = collectionStringOriginal;
+        line = line.replaceAll("[^A-Za-zА-Яа-я0-9]", "");
+        System.out.println(line);
+
+        String encode = EncodeCesar.encode(1, ' ', '~', line);
+        String decode = DecodeCesar.decode(1, ' ', '~', encode);
+        System.out.println("Decode=" + decode.equals(line));
 
 
     }
