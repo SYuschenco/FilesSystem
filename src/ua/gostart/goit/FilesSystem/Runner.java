@@ -1,10 +1,3 @@
-package ua.gostart.goit.FilesSystem;
-import java.util.*;
-
-public class Runner {
-
-    public static void main(String[] args) {
-
 // Выбрать иерархию классов из ДЗ по теме OOP in Java и создать несколько коллекций объектов из данной иерархии.
 // Хотя бы одна коллекция должна содержать в себе объекты разных классов.
 // 1 Создать класс, который печатает созданные коллекции на экран в виде таблицы.
@@ -15,6 +8,15 @@ public class Runner {
 
 //Реализовать шифрование текста с помощью алгоритма Цезаря.
 //Зашифровать и расшифровать текстовое представление коллекци обьектов из ДЗ из Модуля 3: ООП в Java
+
+// //    Покрыть юнит-тестами код к домашним заданиям лекций №4, №5, №9 и №10.
+package ua.gostart.goit.FilesSystem;
+import java.util.*;
+
+public class Runner {
+
+    public static void main(String[] args) {
+
 
 
         // 1 Создать класс, который печатает созданные коллекции на экран в виде таблицы.
@@ -89,8 +91,6 @@ public class Runner {
         String encode = EncodeCesar.encode(1, ' ', '~', line);
         String decode = DecodeCesar.decode(1, ' ', '~', encode);
         System.out.println("Decode=" + decode.equals(line));
-
-
     }
 }
 
